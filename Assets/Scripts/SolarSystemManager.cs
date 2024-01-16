@@ -37,7 +37,15 @@ public class SolarSystemManager : MonoBehaviour
         Orbit(saturn, 8);
         Orbit(uranus, 5);
         Orbit(neptune, 3);
-        Orbit(asteroidsSphere, 10);
+        Orbit(asteroidsSphere, 50);
+        Rotate(mercury, 100);
+        Rotate(venus, 80);
+        Rotate(earth, 50);
+        Rotate(moon, 90);
+        Rotate(mars, 50);
+        Rotate(jupiter, 40);
+        Rotate(saturn, 30);
+        Rotate(uranus, 50);
         Rotate(neptune, 50);
     }
 
@@ -55,12 +63,18 @@ public class SolarSystemManager : MonoBehaviour
     // 자전축을 실제처럼 기울이게하는 함수
     void RotationAxis()
     {
-        neptune.transform.Rotate(0, 0, 50);
+        mercury.transform.Rotate(0, 0, 10);
+        venus.transform.Rotate(0, 0, 30);
+        earth.transform.Rotate(0, 0, 30);
+        mars.transform.Rotate(0, 0, 20);
+        jupiter.transform.Rotate(0, 0, 50);
+        saturn.transform.Rotate(0, 0, 50);
+        uranus.transform.Rotate(0, 0, 50);
     }
 
     // 자전 함수
     void Rotate(GameObject planet, float rotateSpeed)
     {
-        planet.transform.Rotate(0, 0, rotateSpeed * Time.deltaTime, Space.Self);
+        planet.transform.Rotate(0, rotateSpeed * Time.deltaTime, 0, Space.Self);
     }
 }
